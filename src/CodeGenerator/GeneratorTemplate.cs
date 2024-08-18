@@ -68,10 +68,10 @@ public class GeneratorTemplate
             {
                 IEnumerable<char> types = typesCombination.ToCharArray();
                 var typesStr = string.Join(", ", types.Select((type, i) => $"T{i}"));
-                var typesWithNullables = string.Join(", ", types.Select((type, i) => type == 'C' ? $"T{i}" : $"Nullable<T{i}>"));
-                var namedTypesWithNullables = string.Join(", ", types.Select((type, i) => type == 'C' ? $"T{i} T{i}" : $"Nullable<T{i}> T{i}"));
+                var typesWithNullables = string.Join(", ", types.Select((type, i) => type == 'C' ? $"T{i}?" : $"Nullable<T{i}>"));
+                var namedTypesWithNullables = string.Join(", ", types.Select((type, i) => type == 'C' ? $"T{i}? T{i}" : $"Nullable<T{i}> T{i}"));
                 var constraints = string.Join("\n", types.Select((type, i) => type == 'C' ? $"where T{i} : class" : $"where T{i} : struct"));
-                var tupleValues = string.Join(",\n", types.Select((type, i) => type == 'C' ? $"oneOf.Index == {i} ? (T{i})oneOf.AsT{i} : null!" : $"oneOf.Index == {i} ? (Nullable<T{i}>)oneOf.AsT{i} : null"));
+                var tupleValues = string.Join(",\n", types.Select((type, i) => type == 'C' ? $"oneOf.Index == {i} ? (T{i}?)oneOf.AsT{i} : null" : $"oneOf.Index == {i} ? (Nullable<T{i}>)oneOf.AsT{i} : null"));
                 var dummyArguments = string.Join(", ", types.Select((type, i) => $"Require{(type == 'C' ? "Class" : "Struct")}<T{i}>? dummy{i} = null"));
                 var resultConstructor = $"{targetType}<{typesWithNullables}>";
 
