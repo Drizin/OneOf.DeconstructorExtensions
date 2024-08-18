@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>OneOf.TupleExtensions</id>
+    <title>OneOf.TupleExtensions</title>
+    <authors>Rick Drizin</authors>
+    <owners>Rick Drizin</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Drizin/OneOf.TupleExtensions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>OneOf.TupleExtensions: Extensions to to convert OneOf to Tuple or ValueTuple, so they can be deconstructed into the underlying generic types.
+    Since OneOf is a discriminated-union then only one of the types returns a non-null value</description>
+    <copyright>Copyright Rick Drizin 2024</copyright>
+    <dependencies>
+    </dependencies>
+  </metadata>
+</package>

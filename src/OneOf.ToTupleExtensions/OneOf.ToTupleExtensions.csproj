@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+                <TargetFrameworks>net45;netstandard1.3;netstandard2.0</TargetFrameworks>
+		<Authors>Rick Drizin</Authors>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/Drizin/OneOf.ToTupleExtensions/</PackageProjectUrl>
+		<Description>SQL Builder using Fluent API and String Interpolation</Description>
+		<Copyright>Rick Drizin</Copyright>
+		<Company>Rick Drizin</Company>
+		<Version>3.0.0</Version>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<Title>OneOf.ToTupleExtensions</Title>
+		<PackageId>OneOf.ToTupleExtensions</PackageId>
+		<DocumentationFile>OneOf.ToTupleExtensions.xml</DocumentationFile>
+    <PackageTags>discriminated unions, return type, match switch, oneof tuple, deconstruct oneof, fluentresults, result pattern, golang</PackageTags>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<!-- Include symbol files (*.pdb) in the main .nupkg -->
+		<PackageReadmeFile>NuGetReadMe.md</PackageReadmeFile>
+		<AssemblyName>OneOf.ToTupleExtensions</AssemblyName>
+		<Nullable>enable</Nullable>
+		<LangVersion>8.0</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="OneOf.ToTupleExtensions.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\OneOf.ToTupleExtensions\NuGetReadMe.md" Pack="true" PackagePath="\" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="OneOf" Version="3.0.162" />
+		<PackageReference Include="System.ValueTuple" Version="4.3.0" />
+	</ItemGroup>
+
+</Project>
