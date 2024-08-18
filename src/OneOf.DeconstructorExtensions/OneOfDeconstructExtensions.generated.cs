@@ -1,5 +1,5 @@
 ﻿using System;
-namespace OneOf.Deconstruct
+namespace OneOf
 {
     #nullable enable
     /// <summary>

@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
 using OneOf;
-using OneOf.Deconstruct;
 using OneOf.Types;
 
 namespace OneOf.DeconstructorExtension.Tests

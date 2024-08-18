@@ -5,10 +5,13 @@
 		<Authors>Rick Drizin</Authors>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/Drizin/OneOf.DeconstructorExtensions/</PackageProjectUrl>
-		<Description>SQL Builder using Fluent API and String Interpolation</Description>
-		<Copyright>Rick Drizin</Copyright>
+    <Description>
+      This library extends OneOf and OneOfBase with extensions methods to convert into Tuple or ValueTuple.
+      All non-nullable value types are automatically converted into nullable types, so the underlying Tuple values will always have a single non-null value (all other values will be null).
+    </Description>
+    <Copyright>Rick Drizin</Copyright>
 		<Company>Rick Drizin</Company>
-		<Version>3.0.2</Version>
+		<Version>3.0.3</Version>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<Title>OneOf.ToTupleExtensions</Title>
 		<PackageId>OneOf.ToTupleExtensions</PackageId>
