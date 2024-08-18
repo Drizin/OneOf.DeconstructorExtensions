@@ -8,16 +8,22 @@ public class GeneratorTemplate
         string targetType;
 
         className = "OneOf"; targetType = "Tuple";
-        GenerateToTupleClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
+        GenerateToTupleClass(context[$"OneOf.ToTupleExtensions\\{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
         
         className = "OneOf"; targetType = "ValueTuple";
-        GenerateToTupleClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
+        GenerateToTupleClass(context[$"OneOf.ToTupleExtensions\\{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
         
         className = "OneOfBase"; targetType = "Tuple";
-        GenerateToTupleClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
+        GenerateToTupleClass(context[$"OneOf.ToTupleExtensions\\{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
 
         className = "OneOfBase"; targetType = "ValueTuple";
-        GenerateToTupleClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
+        GenerateToTupleClass(context[$"OneOf.ToTupleExtensions\\{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
+
+        className = "OneOf";
+        GenerateDeconstructClass(context[$"OneOf.DeconstructorExtensions\\{className}DeconstructExtensions.generated.cs"], className);
+        
+        className = "OneOfBase";
+        GenerateDeconstructClass(context[$"OneOf.DeconstructorExtensions\\{className}DeconstructExtensions.generated.cs"], className);
     }
 
     static void GenerateToTupleClass(ICodegenOutputFile file, string className, string targetType)
@@ -94,6 +100,77 @@ public class GeneratorTemplate
                         return new {{resultConstructor}}(
                             {{tupleValues}}
                         );
+                    }
+
+                    """;
+            }
+        }
+    }
+
+
+    static void GenerateDeconstructClass(ICodegenOutputFile file, string className)
+    {
+        file.WriteLine($$"""
+            using System;
+            namespace OneOf
+            {
+                #nullable enable
+                /// <summary>
+                /// Extensions that deconstruct the {{className}}.
+                /// Only one of the returned elements will have a non-null value.
+                /// All generic types of {{className}} should either be non-nullable value types or non-nullable reference types
+                /// </summary>
+                public static class {{className}}DeconstructExtensions
+                {
+                    /// <summary>
+                    /// Constraints are not part of the signature, but parameters are. 
+                    /// Constraints in parameters are enforced during overload resolution, so we put the constraints in optional disambiguation parameters.
+                    /// </summary>
+                    public class RequireStruct<T> where T : struct { }
+
+                    /// <summary>
+                    /// Constraints are not part of the signature, but parameters are. 
+                    /// Constraints in parameters are enforced during overload resolution, so we put the constraints in optional disambiguation parameters.
+                    /// </summary>
+                    public class RequireClass<T> where T : class { }
+
+                    {{GenerateDeconstructExtensions(className)}}
+                }
+                #nullable disable
+            }
+            """);
+    }
+
+    static IEnumerable<FormattableString> GenerateDeconstructExtensions(string className)
+    {
+        // We should create deconstructor for all combinations up to 9 elements (OneOf<T0...T8>)
+        int maxTypes = 9;
+        for (int elements = 2; elements <= maxTypes; elements++)
+        {
+            // We want all combination of types "C" (non-nullable reference type) or "S" (non-nullable value types)
+            char[] chars = new char[] { 'C', 'S' };
+
+            var typesCombinations = GenerateStrings(chars, elements);
+            foreach (var typesCombination in typesCombinations)
+            {
+                IEnumerable<char> types = typesCombination.ToCharArray();
+                var typesStr = string.Join(", ", types.Select((type, i) => $"T{i}"));
+                var typesWithNullables = string.Join(", ", types.Select((type, i) => $"T{i}"));
+                var namedTypesWithNullables = string.Join(", ", types.Select((type, i) => type == 'C' ? $"out T{i}? item{i}" : $"out Nullable<T{i}> item{i}"));
+                var constraints = string.Join("\n", types.Select((type, i) => type == 'C' ? $"where T{i} : class" : $"where T{i} : struct"));
+                var setValues = string.Join("\n", types.Select((type, i) => type == 'C' ? $"item{i} = (oneOf.Index == {i} ? (T{i}?)oneOf.AsT{i} : null);" : $"item{i} = (oneOf.Index == {i} ? (Nullable<T{i}>)oneOf.AsT{i} : null);"));
+
+                yield return $$"""
+                    /// <summary>
+                    /// Deconstructs the {{className}}.
+                    /// Only one element of the Tuple will have a non-null value.
+                    /// All generic types of {{className}} should either be non-nullable value types or non-nullable reference types.
+                    /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
+                    /// </summary>
+                    public static void Deconstruct<{{typesWithNullables}}>(this {{className}}<{{typesStr}}> oneOf, {{namedTypesWithNullables}})
+                        {{constraints}}
+                    {
+                        {{setValues}}
                     }
 
                     """;

@@ -13,7 +13,7 @@ internal class Program
         Console.WriteLine("Generating files...");
         var context = new CodegenContext();
         new GeneratorTemplate().Main(context);
-        context.SaveToFolder(Path.Combine(GetDirectory(), @"..\OneOf.ToTupleExtensions"));
+        context.SaveToFolder(Path.Combine(GetDirectory(), @".."));
         foreach (var file in context.OutputFiles)
             Console.WriteLine($"Generated {file.RelativePath}");
     }

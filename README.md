@@ -13,29 +13,37 @@ Discriminated unions are a great way to do exhaustive type matching, which means
 
 However, in some cases it might be helpful to **deconstruct** the OneOf object into its underlying types...
 
+# OneOf.DeconstructorExtensions
+
+**This library extends `OneOf<>` and `OneOfBase<>` with deconstructor methods to extract the underlying types**, while using the same semantic as discriminated-union: **only ONE of the return types will be non-null**.
+
+The major problem solved by this library is that deconstruction is not trivial because of non-nullable value types:
+- When we have an instance of `OneOf<T0, T1, ...>` and we deconstruct it into its underlying types (`T0`, `T1`, ...) we want to have the **same semantic as the union-type**:  **we want only one element to be non-null**
+- This means that any type that is a non-nullable value type (like a primitive type, or `struct` or an `enum`) would have to be converted into an equivalent nullable type. (e.g. `int` should become `Nullable<int>` so it can be `null`).
+- The problem is that we can't just have a single deconstructor that converts all types `T` to `Nullable<T>`, as this can only be done for non-nullable value types.
+- This means that we need a lot of overloads. Let's say we're talking about `OneOf<T0,T1>` - each one of those types `T` may or may not be a non-nullable value type, so we will have 4 different combinations, all having same signature but different `where` constraints for the generic-types. For `OneOf<T0,T1,T2>` we have 8 combinations, etc - this goes up to `OneOf<T0,T1,T2,T3,T4,T5,T6>` which has 128 combinations.
+- Each one of those combinations will convert only the right types to `Nullable<>`
+
+All the hundreds of overloads are created by a [CodegenCS](https://github.com/Drizin/CodegenCS) code generator [template](/src/CodeGenerator/GeneratorTemplate.cs) (output example [here](/src/OneOf.ToTupleExtensions/OneOfBaseConvertToTupleExtensions.generated.cs)).
+
+As a more concrete example, let's say you have a class `SalesOrder` and a method with this signature:
+```cs
+public OneOf<SalesOrder, CreateSalesOrderErrorEnum> CreateSalesOrder(etc..)
+```
+If you do a deconstruction like `var (order, error) = CreateSalesOrder(...)` and the method succeeds (returns a sales order), you would expect that the deconstructed `order` is not-null and `error` is null.  
+However, since `CreateSalesOrderErrorEnum` is enum (non-nullable value type), this deconstruction (where the first type `T0` is a reference-type and the second type `T1` is a non-nullable value type) should return `T0?` and `Nullable<T1>` (in other words `SalesOrder?` and `Nullable<CreateSalesOrderErrorEnum>`). So basically our deconstruction overloads will always find the right combination of types to ensure that all return types are nullable, and only one of the results is a non-null value.
+
+
 # OneOf.ToTupleExtensions
 
-**This library extends `OneOf<>` and `OneOfBase<>` with methods to convert them into `Tuple<>` or `ValueTuple<>`**, which have methods to deconstruct into the underlying types.
+**This library extends `OneOf<>` and `OneOfBase<>` with methods to convert them into `Tuple<>` or `ValueTuple<>`** (which have methods to deconstruct into the underlying types), and uses the same logic as `OneOf.DeconstructorExtensions`: non-nullable value types are converted to nullable types so that only one element of the tuple will be non-null.
 
-The major problem solved by this library is that **deconstruction is not trivial because of non-nullable value types**.
-
-Let's say you have an instance of `OneOf<T0, T1, T2>` which is currently holding a value of type `T0`.  
-If you deconstruct this into the underlying types `T0`, `T1` and `T2` you would expect that only `T0` has a non-null value.  
-However, for example, if `T1` is a non-nullable value type (like a primitive type, or `struct` or an `enum`) then we would need to convert `OneOf<T0, T1, T2>` to a `Tuple<T0, Nullable<T1>, T2>` so that any of the 3 types can be eventually deconstructed into a null value.
-
-In other words: 
-- When `OneOf<>`/`OneOfBase<>` is mapped into `Tuple<>` or `ValueTuple` any **non-nullable value-type `T` is converted into a nullable type `Nullable<T>`**
-- This means that the standard tuple deconstructor will return a single non-null value, and all other values will be null
-- As an example, `OneOf<SomeClass, SomeEnumType>` would be mapped into a `Tuple<SomeClass, Nullable<SomeEnumType>>`.  
-  If this type is holding an instance of `SomeClass` then the deconstruction will return `null` for the second type instead of returning `default(SomeEnumType)` which would be the first enum value.
-
-Our extension-methods can be applied both to `OneOf<>` and `OneOfBase<>`, and there is an extension for every possible combination of types (e.g. every combination of types from `<T0,T1>` up to `<T0,T1,...T6>`, where each one of those types `T` may or may not be a non-nullable value type).  
-All those extensions are created by a [CodegenCS](https://github.com/Drizin/CodegenCS) code generator [template](/src/CodeGenerator/GeneratorTemplate.cs) (output example [here](/src/OneOf.ToTupleExtensions/OneOfBaseConvertToTupleExtensions.generated.cs)), and in order for the compiler to disambiguate between multiple overloads we use some [overload-resolution hacks](https://stackoverflow.com/questions/2974519/generic-constraints-where-t-struct-and-where-t-class/36775837#36775837) to let the compiler find the best match according to generic type constraints.
+One specific challenge here (doesn't happen for deconstructors but happens here) is that the compiler does NOT consider constraints as part of the method signature, so the compiler thinks that all overloads are possible matches - and we have to use an [overload-resolution hack](https://stackoverflow.com/questions/2974519/generic-constraints-where-t-struct-and-where-t-class/36775837#36775837) to let the compiler correctly disambiguate between the multiple overloads (which all have identical signature) and use the right method (where we convert only the right types to `Nullable<>`).
 
 
 ## Subclassing alternative
 
-If you are subclassing from `OneOfBase<>` (instead of using the standard `OneOf<>` structs) then instead of using our extension methods you can also create your own deconstructor.  
+If you are subclassing from `OneOfBase<>` (instead of using the standard `OneOf<>` structs) then instead of using our extension methods you could create your own deconstructor. 
 You can subclass with concrete types:
 ```cs
 public class CreateUserResult : OneOfBase<User, CreateUserErrorEnum, List<ValidationError> {...}
@@ -49,11 +57,9 @@ public class Result<TResult, TErrorEnum> : OneOfBase<TResult, TErrorEnum, List<V
 {...}
 ```
 
-In both cases it's clear to the compiler what types are non-nullable value types and you can just handle that (and convert to nullable types) in your deconstructor (you don't need to use Tuples).
+In both cases it's clear to the compiler what types are non-nullable value types and you can just handle that (and convert to nullable types) in your deconstructor.
 
-But why would you have that trouble (writing your own classes and destructors) if you can just rely in our extension-methods? :-) 
-
-
+But why would you manually write your own classes and destructors when you can just use `OneOf<>` and use our extension-methods? :-) 
 
 <hr>
 <br/>
@@ -137,8 +143,8 @@ With ToTuple extensions and deconstruct operators we can use a concise golang-st
 
 
 ```cs
-// ToValueTuple enables us to use deconstruction (which does not exist in OneOf library)
-var (user, error, validationErrors) = service.CreateUser(createUserCommand).ToValueTuple();
+// Extensions enables us to use deconstruction (which does not exist in OneOf library)
+var (user, error, validationErrors) = service.CreateUser(createUserCommand);
 
 if (validationErrors != null)
 {

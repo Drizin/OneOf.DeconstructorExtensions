@@ -10,31 +10,30 @@
 		<Company>Rick Drizin</Company>
 		<Version>3.0.2</Version>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<Title>OneOf.ToTupleExtensions</Title>
-		<PackageId>OneOf.ToTupleExtensions</PackageId>
-		<DocumentationFile>OneOf.ToTupleExtensions.xml</DocumentationFile>
+		<Title>OneOf.DeconstructorExtensions</Title>
+		<PackageId>OneOf.DeconstructorExtensions</PackageId>
+		<DocumentationFile>OneOf.DeconstructorExtensions.xml</DocumentationFile>
     <PackageTags>discriminated unions, return type, match switch, oneof tuple, deconstruct oneof, fluentresults, result pattern, golang</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<!-- Include symbol files (*.pdb) in the main .nupkg -->
 		<PackageReadmeFile>NuGetReadMe.md</PackageReadmeFile>
-		<AssemblyName>OneOf.ToTupleExtensions</AssemblyName>
+		<AssemblyName>OneOf.DeconstructorExtensions</AssemblyName>
 		<Nullable>enable</Nullable>
 		<LangVersion>8.0</LangVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="OneOf.ToTupleExtensions.xml" />
+	  <None Remove="OneOf.DeconstructorExtensions.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\OneOf.ToTupleExtensions\NuGetReadMe.md" Pack="true" PackagePath="\" />
+		<None Include="..\OneOf.DeconstructorExtensions\NuGetReadMe.md" Pack="true" PackagePath="\" />
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="OneOf" Version="3.0.162" />
-		<PackageReference Include="System.ValueTuple" Version="4.3.0" />
 	</ItemGroup>
 
 </Project>

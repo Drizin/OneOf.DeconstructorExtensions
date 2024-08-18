@@ -47,12 +47,26 @@ try {
 	Get-ChildItem .\ -Recurse | Where{$_.FullName -Match ".*\\obj\\.*project.assets.json$"} | Remove-Item
 	Get-ChildItem .\ -Recurse | Where{$_.FullName -Match ".*\.csproj$" -and $_.FullName -NotMatch ".*\\VSExtensions\\" } | ForEach { dotnet clean $_.FullName }
 
-	dotnet clean OneOf.ToTupleExtensions.sln
-	dotnet clean OneOf.ToTupleExtensions\OneOf.ToTupleExtensions.csproj
+	dotnet clean OneOf.DeconstructorExtensions.sln
+	dotnet clean OneOf.DeconstructorExtensions\OneOf.DeconstructorExtensions.csproj
+	dotnet clean OneOf.DeconstructorExtensions\OneOf.ToTupleExtensions.csproj
 	
-	dotnet restore OneOf.ToTupleExtensions.sln
+	dotnet restore OneOf.DeconstructorExtensions.sln
 
 	
+	# OneOf.DeconstructorExtensions + nupkg/snupkg (dotnet build is the best at restoring packages; but for deterministic builds we need msbuild)
+	dotnet build -c release OneOf.DeconstructorExtensions\OneOf.DeconstructorExtensions.csproj
+	& $msbuild "OneOf.DeconstructorExtensions\OneOf.DeconstructorExtensions.csproj" `
+			   /t:Pack                                        `
+			   /p:PackageOutputPath="..\packages-local\"      `
+			   '/p:targetFrameworks="net45;netstandard1.3;netstandard2.0"'  `
+			   /p:Configuration=$configuration                `
+			   /p:IncludeSymbols=true                         `
+			   /p:SymbolPackageFormat=snupkg                  `
+			   /verbosity:minimal                             `
+			   /p:ContinuousIntegrationBuild=true
+	if (! $?) { throw "msbuild failed" }
+
 	# OneOf.ToTupleExtensions + nupkg/snupkg (dotnet build is the best at restoring packages; but for deterministic builds we need msbuild)
 	dotnet build -c release OneOf.ToTupleExtensions\OneOf.ToTupleExtensions.csproj
 	& $msbuild "OneOf.ToTupleExtensions\OneOf.ToTupleExtensions.csproj" `

@@ -352,4 +352,6 @@ MigrationBackup/
 /src/release.snk
 
 /src/publicrelease.key
-/src/OneOf.ToTupleExtensions/OneOf.TupleExtensions.xml
+/src/OneOf.ToTupleExtensions/OneOf.ToTupleExtensions.xml
+/src/OneOf.DeconstructorExtensions/OneOf.DeconstructorExtensions.xml
+/src/OneOf.DeconstructorExtensions/OneOf.ToTupleExtensions.xml

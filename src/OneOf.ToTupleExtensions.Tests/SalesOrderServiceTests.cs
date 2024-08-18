@@ -1,8 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
 using OneOf;
-using System.Linq;
-using OneOf.Types;
 using System.Collections.Generic;
 
 namespace OneOf.ToTupleExtensions.Tests
