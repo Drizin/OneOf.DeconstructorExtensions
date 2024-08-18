@@ -5,9 +5,9 @@
 
 [OneOf](https://github.com/mcintyre321/OneOf/) is a popular library that enhances C# with discriminated unions, which basically means that you can create types that can represent different types - e.g. an instance of  `OneOf<int, string, float>` will hold a single value that will either be an `int`, or a `string`, or a `float`.
 
-Discriminated unions are a great way to do exhaustive type matching, which means that the compiler can enforce that all possible types are being handled:
-- By using `OneOf<>.Switch()` you **need** to specify an an `Action<T>` for each of possible type `T`, which means that the compiler will enforce that all possible types are handled
-- By using `OneOf<>.Match()` you **need** to specify a `Func<T, TResult>` that will convert each possible type `T` into a single type `TResult`, which means that  the compiler will enforce that all possible types are handled
+Discriminated unions are a great way to do exhaustive type matching, which means that the **compiler can enforce that all possible types are being handled**:
+- By using `OneOf<>.Switch()` you **need** to specify an an `Action<T>` for each of possible type `T`
+- By using `OneOf<>.Match()` you **need** to specify a `Func<T, TResult>` that will convert each possible type `T` into a single type `TResult`
 
 `OneOf` library intentionally does NOT allow the underlying types to be deconstructed because it kind of [defeats the purpose](https://github.com/mcintyre321/OneOf/pull/114) of the library, which is exactly to enforce compile-time exhaustive type matching.
 
@@ -19,9 +19,9 @@ However, in some cases it might be helpful to **deconstruct** the OneOf object i
 
 The major problem solved by this library is that **deconstruction is not trivial because of non-nullable value types**.
 
-Let's say you have an instance of `OneOf<T0, T1, T2>` which is currently holding a value of type `T1`.  
+Let's say you have an instance of `OneOf<T0, T1, T2>` which is currently holding a value of type `T0`.  
 If you deconstruct this into the underlying types `T0`, `T1` and `T2` you would expect that only `T0` has a non-null value.  
-However, for example, if `T1` is a non-nullable type (like a struct or an enum) then we would need to convert `OneOf<T0, T1, T2>` to a `Tuple<T0, Nullable<T1>, T2>` so that any of the 3 types can be eventually deconstructed into a null value.
+However, for example, if `T1` is a non-nullable value type (like a primitive type, or `struct` or an `enum`) then we would need to convert `OneOf<T0, T1, T2>` to a `Tuple<T0, Nullable<T1>, T2>` so that any of the 3 types can be eventually deconstructed into a null value.
 
 In other words: 
 - When `OneOf<>`/`OneOfBase<>` is mapped into `Tuple<>` or `ValueTuple` any **non-nullable value-type `T` is converted into a nullable type `Nullable<T>`**
@@ -29,8 +29,9 @@ In other words:
 - As an example, `OneOf<SomeClass, SomeEnumType>` would be mapped into a `Tuple<SomeClass, Nullable<SomeEnumType>>`.  
   If this type is holding an instance of `SomeClass` then the deconstruction will return `null` for the second type instead of returning `default(SomeEnumType)` which would be the first enum value.
 
-Our extension-methods can be applied both to `OneOf<>` and `OneOfBase<>`, and there is an extension for every possible combination of types (e.g. every combination of types from `T0..T1` up to `T0..T6`, where each one of those types may or may not be a non-nullable value type).  
-All those combinations are created by a [CodegenCS](https://github.com/Drizin/CodegenCS) code generator [template](/src/CodeGenerator/GeneratorTemplate.cs).
+Our extension-methods can be applied both to `OneOf<>` and `OneOfBase<>`, and there is an extension for every possible combination of types (e.g. every combination of types from `<T0,T1>` up to `<T0,T1,...T6>`, where each one of those types `T` may or may not be a non-nullable value type).  
+All those extensions are created by a [CodegenCS](https://github.com/Drizin/CodegenCS) code generator [template](/src/CodeGenerator/GeneratorTemplate.cs) (output example [here](/src/OneOf.ToTupleExtensions/OneOfBaseConvertToTupleExtensions.generated.cs)), and in order for the compiler to disambiguate between multiple overloads we use some [overload-resolution hacks](https://stackoverflow.com/questions/2974519/generic-constraints-where-t-struct-and-where-t-class/36775837#36775837) to let the compiler find the best match according to generic type constraints.
+
 
 ## Subclassing alternative
 
