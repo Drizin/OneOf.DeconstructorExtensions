@@ -8,19 +8,19 @@ public class GeneratorTemplate
         string targetType;
 
         className = "OneOf"; targetType = "Tuple";
-        GenerateClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
+        GenerateToTupleClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
         
         className = "OneOf"; targetType = "ValueTuple";
-        GenerateClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
+        GenerateToTupleClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
         
         className = "OneOfBase"; targetType = "Tuple";
-        GenerateClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
+        GenerateToTupleClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
 
         className = "OneOfBase"; targetType = "ValueTuple";
-        GenerateClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
+        GenerateToTupleClass(context[$"{className}ConvertTo{targetType}Extensions.generated.cs"], className, targetType);
     }
 
-    static void GenerateClass(ICodegenOutputFile file, string className, string targetType)
+    static void GenerateToTupleClass(ICodegenOutputFile file, string className, string targetType)
     {
         file.WriteLine($$"""
             using System;
@@ -28,9 +28,9 @@ public class GeneratorTemplate
             {
                 #nullable enable
                 /// <summary>
-                /// Extensions that converts the OneOf{} into a Tuple{} or ValueTuple{} that can be desconstructed.
+                /// Extensions that converts {{className}} into a {{targetType}} that can be desconstructed.
                 /// Only one element of the Tuple will have a non-null value.
-                /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types
+                /// All generic types of {{className}} should either be non-nullable value types or non-nullable reference types
                 /// </summary>
                 public static class {{className}}To{{targetType}}Extensions
                 {
@@ -46,14 +46,14 @@ public class GeneratorTemplate
                     /// </summary>
                     public class RequireClass<T> where T : class { }
 
-                    {{GenerateExtensions(className, targetType)}}
+                    {{GenerateToTupleExtensions(className, targetType)}}
                 }
                 #nullable disable
             }
             """);
     }
 
-    static IEnumerable<FormattableString> GenerateExtensions(string className, string targetType)
+    static IEnumerable<FormattableString> GenerateToTupleExtensions(string className, string targetType)
     {
         // ValueTuple goes from T1 up to T7, so max number of combinations we can accept are Tuples with 7 elements (T0 to T6)
         // so maxTypes should be <= 7.
@@ -83,9 +83,9 @@ public class GeneratorTemplate
 
                 yield return $$"""
                     /// <summary>
-                    /// Converts the OneOf{} into a {{targetType}}{} that can be desconstructed.
+                    /// Converts the {{className}} into a {{targetType}}{} that can be desconstructed.
                     /// Only one element of the Tuple will have a non-null value.
-                    /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+                    /// All generic types of {{className}} should either be non-nullable value types or non-nullable reference types.
                     /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
                     /// </summary>
                     public static {{resultTypeDeclaration}} To{{targetType}}<{{typesStr}}>(this {{className}}<{{typesStr}}> oneOf, {{dummyArguments}})

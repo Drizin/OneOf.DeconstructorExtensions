@@ -3,9 +3,9 @@ namespace OneOf
 {
     #nullable enable
     /// <summary>
-    /// Extensions that converts the OneOf{} into a Tuple{} or ValueTuple{} that can be desconstructed.
+    /// Extensions that converts OneOfBase into a Tuple that can be desconstructed.
     /// Only one element of the Tuple will have a non-null value.
-    /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types
+    /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types
     /// </summary>
     public static class OneOfBaseToTupleExtensions
     {
@@ -22,9 +22,9 @@ namespace OneOf
         public class RequireClass<T> where T : class { }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?> ToTuple<T0, T1>(this OneOfBase<T0, T1> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null)
@@ -38,9 +38,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>> ToTuple<T0, T1>(this OneOfBase<T0, T1> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null)
@@ -54,9 +54,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?> ToTuple<T0, T1>(this OneOfBase<T0, T1> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null)
@@ -70,9 +70,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>> ToTuple<T0, T1>(this OneOfBase<T0, T1> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null)
@@ -86,9 +86,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?> ToTuple<T0, T1, T2>(this OneOfBase<T0, T1, T2> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null)
@@ -104,9 +104,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>> ToTuple<T0, T1, T2>(this OneOfBase<T0, T1, T2> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null)
@@ -122,9 +122,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?> ToTuple<T0, T1, T2>(this OneOfBase<T0, T1, T2> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null)
@@ -140,9 +140,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>> ToTuple<T0, T1, T2>(this OneOfBase<T0, T1, T2> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null)
@@ -158,9 +158,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?> ToTuple<T0, T1, T2>(this OneOfBase<T0, T1, T2> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null)
@@ -176,9 +176,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>> ToTuple<T0, T1, T2>(this OneOfBase<T0, T1, T2> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null)
@@ -194,9 +194,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?> ToTuple<T0, T1, T2>(this OneOfBase<T0, T1, T2> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null)
@@ -212,9 +212,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>> ToTuple<T0, T1, T2>(this OneOfBase<T0, T1, T2> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null)
@@ -230,9 +230,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null)
@@ -250,9 +250,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null)
@@ -270,9 +270,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null)
@@ -290,9 +290,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null)
@@ -310,9 +310,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null)
@@ -330,9 +330,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null)
@@ -350,9 +350,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null)
@@ -370,9 +370,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null)
@@ -390,9 +390,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null)
@@ -410,9 +410,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null)
@@ -430,9 +430,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null)
@@ -450,9 +450,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null)
@@ -470,9 +470,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null)
@@ -490,9 +490,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null)
@@ -510,9 +510,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null)
@@ -530,9 +530,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>> ToTuple<T0, T1, T2, T3>(this OneOfBase<T0, T1, T2, T3> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null)
@@ -550,9 +550,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -572,9 +572,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -594,9 +594,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -616,9 +616,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -638,9 +638,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -660,9 +660,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -682,9 +682,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -704,9 +704,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -726,9 +726,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -748,9 +748,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -770,9 +770,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -792,9 +792,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -814,9 +814,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -836,9 +836,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -858,9 +858,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -880,9 +880,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -902,9 +902,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -924,9 +924,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -946,9 +946,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -968,9 +968,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -990,9 +990,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -1012,9 +1012,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -1034,9 +1034,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -1056,9 +1056,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -1078,9 +1078,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -1100,9 +1100,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -1122,9 +1122,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -1144,9 +1144,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -1166,9 +1166,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -1188,9 +1188,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -1210,9 +1210,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null)
@@ -1232,9 +1232,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>> ToTuple<T0, T1, T2, T3, T4>(this OneOfBase<T0, T1, T2, T3, T4> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null)
@@ -1254,9 +1254,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1278,9 +1278,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1302,9 +1302,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1326,9 +1326,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1350,9 +1350,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1374,9 +1374,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1398,9 +1398,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1422,9 +1422,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1446,9 +1446,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1470,9 +1470,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1494,9 +1494,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1518,9 +1518,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1542,9 +1542,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1566,9 +1566,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1590,9 +1590,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1614,9 +1614,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1638,9 +1638,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1662,9 +1662,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1686,9 +1686,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1710,9 +1710,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1734,9 +1734,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1758,9 +1758,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1782,9 +1782,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1806,9 +1806,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1830,9 +1830,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1854,9 +1854,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1878,9 +1878,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1902,9 +1902,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1926,9 +1926,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1950,9 +1950,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -1974,9 +1974,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -1998,9 +1998,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2022,9 +2022,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2046,9 +2046,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2070,9 +2070,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2094,9 +2094,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2118,9 +2118,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2142,9 +2142,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2166,9 +2166,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2190,9 +2190,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2214,9 +2214,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2238,9 +2238,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2262,9 +2262,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2286,9 +2286,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2310,9 +2310,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2334,9 +2334,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2358,9 +2358,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2382,9 +2382,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2406,9 +2406,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2430,9 +2430,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2454,9 +2454,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2478,9 +2478,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2502,9 +2502,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2526,9 +2526,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2550,9 +2550,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2574,9 +2574,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2598,9 +2598,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2622,9 +2622,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2646,9 +2646,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2670,9 +2670,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2694,9 +2694,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2718,9 +2718,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2742,9 +2742,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null)
@@ -2766,9 +2766,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>> ToTuple<T0, T1, T2, T3, T4, T5>(this OneOfBase<T0, T1, T2, T3, T4, T5> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null)
@@ -2790,9 +2790,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -2816,9 +2816,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -2842,9 +2842,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -2868,9 +2868,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -2894,9 +2894,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -2920,9 +2920,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -2946,9 +2946,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -2972,9 +2972,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, T3?, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -2998,9 +2998,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3024,9 +3024,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3050,9 +3050,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3076,9 +3076,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3102,9 +3102,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3128,9 +3128,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3154,9 +3154,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3180,9 +3180,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3206,9 +3206,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3232,9 +3232,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3258,9 +3258,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3284,9 +3284,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3310,9 +3310,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3336,9 +3336,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3362,9 +3362,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3388,9 +3388,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3414,9 +3414,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3440,9 +3440,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3466,9 +3466,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3492,9 +3492,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3518,9 +3518,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3544,9 +3544,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3570,9 +3570,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3596,9 +3596,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3622,9 +3622,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3648,9 +3648,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3674,9 +3674,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3700,9 +3700,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3726,9 +3726,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3752,9 +3752,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3778,9 +3778,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3804,9 +3804,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, T3?, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3830,9 +3830,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3856,9 +3856,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3882,9 +3882,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3908,9 +3908,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3934,9 +3934,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -3960,9 +3960,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -3986,9 +3986,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4012,9 +4012,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4038,9 +4038,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4064,9 +4064,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4090,9 +4090,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4116,9 +4116,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4142,9 +4142,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4168,9 +4168,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4194,9 +4194,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4220,9 +4220,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4246,9 +4246,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4272,9 +4272,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4298,9 +4298,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4324,9 +4324,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4350,9 +4350,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4376,9 +4376,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4402,9 +4402,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4428,9 +4428,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<T0?, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireClass<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4454,9 +4454,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4480,9 +4480,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4506,9 +4506,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4532,9 +4532,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4558,9 +4558,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4584,9 +4584,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4610,9 +4610,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4636,9 +4636,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, T3?, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4662,9 +4662,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4688,9 +4688,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4714,9 +4714,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4740,9 +4740,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4766,9 +4766,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4792,9 +4792,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4818,9 +4818,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4844,9 +4844,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4870,9 +4870,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4896,9 +4896,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4922,9 +4922,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -4948,9 +4948,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -4974,9 +4974,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5000,9 +5000,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5026,9 +5026,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5052,9 +5052,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5078,9 +5078,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5104,9 +5104,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5130,9 +5130,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5156,9 +5156,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5182,9 +5182,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5208,9 +5208,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5234,9 +5234,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5260,9 +5260,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, T1?, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireClass<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5286,9 +5286,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5312,9 +5312,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5338,9 +5338,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5364,9 +5364,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5390,9 +5390,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5416,9 +5416,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5442,9 +5442,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5468,9 +5468,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, T3?, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5494,9 +5494,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5520,9 +5520,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5546,9 +5546,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5572,9 +5572,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5598,9 +5598,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5624,9 +5624,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5650,9 +5650,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5676,9 +5676,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, T2?, Nullable<T3>, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireClass<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5702,9 +5702,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5728,9 +5728,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5754,9 +5754,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5780,9 +5780,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5806,9 +5806,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5832,9 +5832,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5858,9 +5858,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5884,9 +5884,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, T3?, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireClass<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5910,9 +5910,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5936,9 +5936,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -5962,9 +5962,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -5988,9 +5988,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, T4?, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireClass<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -6014,9 +6014,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -6040,9 +6040,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, T5?, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireClass<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
@@ -6066,9 +6066,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>, T6?> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireClass<T6>? dummy6 = null)
@@ -6092,9 +6092,9 @@ namespace OneOf
         }
 
         /// <summary>
-        /// Converts the OneOf{} into a Tuple{} that can be desconstructed.
+        /// Converts the OneOfBase into a Tuple{} that can be desconstructed.
         /// Only one element of the Tuple will have a non-null value.
-        /// All generic types of OneOf{} should either be non-nullable value types or non-nullable reference types.
+        /// All generic types of OneOfBase should either be non-nullable value types or non-nullable reference types.
         /// All optional parameters named "dummy" will be ignored - they are just used for compiler disambiguation (to find the right combination of reference-types and value-types)
         /// </summary>
         public static Tuple<Nullable<T0>, Nullable<T1>, Nullable<T2>, Nullable<T3>, Nullable<T4>, Nullable<T5>, Nullable<T6>> ToTuple<T0, T1, T2, T3, T4, T5, T6>(this OneOfBase<T0, T1, T2, T3, T4, T5, T6> oneOf, RequireStruct<T0>? dummy0 = null, RequireStruct<T1>? dummy1 = null, RequireStruct<T2>? dummy2 = null, RequireStruct<T3>? dummy3 = null, RequireStruct<T4>? dummy4 = null, RequireStruct<T5>? dummy5 = null, RequireStruct<T6>? dummy6 = null)
